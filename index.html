@@ -40,8 +40,11 @@
 
 <script>
 function generateKey(days) {
-  let key = Math.random().toString(36).substring(2, 10).toUpperCase();
-
+  let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+let key = "";
+for (let i = 0; i < 8; i++) {
+  key += chars[Math.floor(Math.random() * chars.length)];
+}
   let now = new Date();
   let expiry = new Date();
   expiry.setDate(now.getDate() + days);
