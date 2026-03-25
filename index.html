@@ -29,40 +29,7 @@
 </head>
 <body>
 
-<div class="box">
-    <h2>Your License Key</h2>
-
-    <a href="https://yourlink.com" target="_blank">
-        RJ.MODS_UNLIMITED.DEVICE
-    </a>
-
-    <h1 id="key">Loading...</h1>
-    <p id="expiry"></p>
-
-  <button onclick="generateKey(1)">1 Day Key</button>
-  <button onclick="generateKey(5)">5 Day Key</button>
-</div>
-
-<script>
-function generateKey(days) {
-  let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-let key = "";
-for (let i = 0; i < 8; i++) {
-  key += chars[Math.floor(Math.random() * chars.length)];
-}
-  let now = new Date();
-  let expiry = new Date();
-  expiry.setDate(now.getDate() + days);
-
-  document.getElementById("key").innerText = key;
-  document.getElementById("expiry").innerText =
-    "Valid till: " + expiry.toLocaleString();
-}
-
-// Auto generate 1 day key on load
-window.onload = function() {
-  generateKey(1);
-}
+nobitahi189-a11y.github.io
 </script>
 
 </body>
