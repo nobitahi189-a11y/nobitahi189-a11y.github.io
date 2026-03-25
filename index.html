@@ -1,87 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Key Generator</title>
-
-    <style>
-        body {
-            background: #0f172a;
-            color: white;
-            font-family: Arial;
-            text-align: center;
-            padding-top: 100px;
-        }
-
-        .box {
-            background: #1e293b;
-            padding: 30px;
-            border-radius: 10px;
-            display: inline-block;
-        }
-
-        button {
-            padding: 10px 20px;
-            border: none;
-            background: #3b82f6;
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 15px;
-        }
-
-        a {
-            display: block;
-            margin-bottom: 15px;
-            color: #38bdf8;
-            font-weight: bold;
-            text-decoration: none;
-        }
-    </style>
-</head>
-
-<body>
-
-<div class="box">
-
-    <!-- ✅ TERA LINK YAHA HE -->
-    <a href="https://yourlink.com" target="_blank">
-        RJ.MODS_UNLIMITED.DEVICE
-    </a>
-
-    <h2>Your License Key</h2>
-    <h1 id="key">Loading...</h1>
-    <p id="expiry"></p>
-
-    <button onclick="generateKey(1)">1 Day Key</button>
-    <button onclick="generateKey(5)">5 Day Key</button>
-
-</div>
-
 <script>
 
-function generateKey(days) {
-    let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    let key = "";
-
-    for (let i = 0; i < 8; i++) {
-        key += chars[Math.floor(Math.random() * chars.length)];
-    }
-
-    let now = new Date();
-    let expiry = new Date();
-    expiry.setDate(now.getDate() + days);
-
-    document.getElementById("key").innerText = key;
-    document.getElementById("expiry").innerText =
-        "Valid till: " + expiry.toLocaleString();
-}
-
-// Auto generate
 window.onload = function () {
-    generateKey(1);
+    document.getElementById("key").innerText = "RJ.MODS_UNLIMITED.DEVICE";
+    document.getElementById("expiry").innerText = "Unlimited Access";
 }
 
 </script>
-
-</body>
-</html>
