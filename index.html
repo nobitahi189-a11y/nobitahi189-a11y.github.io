@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Key Generator</title>
+  <style>
+    body {
+      background: #0f172a;
+      color: white;
+      font-family: Arial;
+      text-align: center;
+      padding-top: 100px;
+    }
+    .box {
+      background: #1e293b;
+      padding: 30px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      background: #3b82f6;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <h2>Your License Key</h2>
+  <h1 id="key">Loading...</h1>
+  <p id="expiry"></p>
+
+  <button onclick="generateKey(1)">1 Day Key</button>
+  <button onclick="generateKey(5)">5 Day Key</button>
+</div>
+
+<script>
+function generateKey(days) {
+  let key = Math.random().toString(36).substring(2, 10).toUpperCase();
+
+  let now = new Date();
+  let expiry = new Date();
+  expiry.setDate(now.getDate() + days);
+
+  document.getElementById("key").innerText = key;
+  document.getElementById("expiry").innerText =
+    "Valid till: " + expiry.toLocaleString();
+}
+
+// Auto generate 1 day key on load
+window.onload = function() {
+  generateKey(1);
+}
+</script>
+
+</body>
+</html>
